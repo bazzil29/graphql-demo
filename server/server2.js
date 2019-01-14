@@ -7,6 +7,10 @@ const schema = buildSchema(`
     type Query{
         course(id:Int!):Course
         courses(topic:String) :[Course]
+    },
+
+    type Mutation {
+        update(id:Int! , topic:String!):Course
     }
 
     type Course {
@@ -61,9 +65,22 @@ const getCourses = (args) => {
 
 }
 
+const updateCourse = (args) => {
+    const id = args.id;
+    const topic = args.topic;
+    coursesData.map(e => {
+        if (e.id === id) {
+            e.topic = topic
+        }
+    });
+
+    return coursesData.filter(e => e.id === id)[0];
+}
+
 const root = {
     course: getCourse,
-    courses: getCourses
+    courses: getCourses,
+    update: updateCourse
 };
 
 const app = express();
