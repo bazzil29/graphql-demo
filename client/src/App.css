@@ -30,3 +30,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.task-check , .task-name , .task-delete {
+  display: inline;
+} 
+
+.done-task{
+  color: green;
+  display: inline;
+}
