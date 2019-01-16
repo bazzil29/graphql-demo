@@ -1,5 +1,5 @@
 export const getTasks = () => {
-    return fetch('http://localhost:4000/graphql', {
+    return fetch('https://graphql-demo-ppbra.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql'
@@ -16,7 +16,7 @@ export const getTasks = () => {
         .catch(err => err)
 }
 export const editTask = (id, isDone) => {
-    return fetch('http://localhost:4000/graphql', {
+    return fetch('https://graphql-demo-ppbra.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql'
@@ -34,7 +34,7 @@ export const editTask = (id, isDone) => {
 }
 
 export const deleteTask = (id) => {
-    return fetch('http://localhost:4000/graphql', {
+    return fetch('https://graphql-demo-ppbra.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql'
@@ -52,7 +52,7 @@ export const deleteTask = (id) => {
 }
 
 export const addTask = (name) => {
-    return fetch('http://localhost:4000/graphql', {
+    return fetch('https://graphql-demo-ppbra.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql'
